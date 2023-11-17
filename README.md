@@ -3,7 +3,7 @@
 
 ## Étapes du projet
 1. [X] Mettre en place l'environnement de développement
-2. [ ] Découper la maquette
+2. [X] Découper la maquette
 3. [ ] Intégrer le header du projet
 4. [ ] Ajouter le formulaire de recherche
 5. [ ] Ajouter la partie Filtres
@@ -41,10 +41,10 @@ Les textes "Hébergements" et "Activités", situés dans l'en-tête, sont des li
 Trois maquettes ont été réalisées : desktop, tablette et mobile.
 
 ### Breakpoints
-Nous avons convenu avec le designer UI d’utiliser 1024 px et 768 px :
-- > 1024 px pour les écrans d’ordinateurs ;
-- >= 768 px pour les tablettes ;
-- et tout ce qui est en dessous de 768 px pour les téléphones portables.
+Nous avons convenu avec le designer UI d'utiliser 1024 px et 768 px :
+- supérieur à 1024 px pour les écrans d’ordinateurs ;
+- supérieur ou égal à 768 px pour les tablettes ;
+- inférieur à 768 px pour les téléphones portables.
 
 ### Largeur min - max
 Pour éviter d'étirer la page web sur la largeur de façon excessive, il va falloir déterminer une largeur maximum de 1440 px. Au-delà, une marge blanche doit apparaître sur les côtés et le contenu doit se limiter à 1440 px de large.
