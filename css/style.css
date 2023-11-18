@@ -8,8 +8,7 @@
 /* 2..............................Utils */
 /* 3.............................Layout */
 /* 4.........................Components */
-/* 5..............................Pages */
-/* 6.............................Themes */
+/* 5.........................Responsive */
 
 
 
@@ -22,99 +21,387 @@
 /* $Variables
    ==================================== */
 
-
-/****** General ***********/
-* {
-  font-family: 'Raleway', sans-serif;
-}
-
 :root {
-  --main-color: #0065FC;
-  --main-bg-color: #F2F2F2;
-  --filter-bg-color: #DEEBFF;
+
+/* Colors: default--theme--light */
+  --c-brand:        #0065FC;    /* button */
+  --c-brand--light: #DEEBFF;    /* button:hover */
+  --c-main:         #000;       /* body */
+  --b-main:         #fff;       /* body */
+  --b-content:      #F2F2F2;    /* sections */
+  --c-filters:      #D9D9D9;    /* filters border */
+
+/* Text */
+  --f-size-s:       0.875rem;   /* details */
+  --f-size-p:       1rem;       /* body - footer - h3 - nav - info */
+  --f-size-b:       1.125rem;   /* filters */
+  --f-size-xb:      1.375rem;   /* h1 - h2 */
+  --l-height:       1;
+
+/* Layout */
+  --l--small:       20rem;      /* Minimun width */
+  --l--large:       90rem;      /* Max width for large screen */
+  --l--item:        25rem;      /* Minimum width for an item */
+  --l--margin:      90%;        /* External margin */
+
+/* Gutters */
+  --gap--s:         clamp(1rem, 2vmax, 2rem);
+  --gap:            clamp(2rem, 4vmax, 4rem);
+  --gap--b:         clamp(3rem, 6vmax, 6rem);
+  --gap--xb:        clamp(4rem, 7vw, 9rem);
+
 }
 
-.fa-solid {
-  color: var(--main-color);
+/* $Reset & Normalize
+   ==================================== */
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  display: flex;
-  justify-content: center;
+  color: var(--c-main);
+  background-color: var(--b-main);  
+}  
+
+/* Inherit font on Form Elements for a Better Mobile Experience */
+h1,
+input,
+button,
+select,
+textarea {
+  font: inherit;
 }
 
-.main-container {
-  width: 100%;
-  max-width: 1440px;
-  padding: 0 50px;
-  box-sizing: border-box;
+a,
+button {
+  all: unset;
+  cursor: pointer;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+a:link,
+a:visited {
+  color: var(--c-main);
 }
 
-.section-title {
-  margin: 0;
-  font-size: 22px;
+/* Set font-size on Form Elements for a Better Mobile Experience
+   To avoid mobile browsers from zooming in on HTML form elements
+   when a <select> drop-down is tapped, add font-size to the selector
+*/
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  font-size: var(--f-size-p);
 }
 
-.card {
-  background-color: white;
-  border-radius: 20px;
-  padding: 5px;
-  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+ol, ul, menu {
+  list-style: none;
 }
 
-.card img {
+/* Style broken images */
+img,
+img::before,
+img::after {
+  display: block;
+  max-width: 100%;
   object-fit: cover;
+  vertical-align: middle;
+  position: relative;
+  font: inherit;
+  text-align: center;
 }
 
-.card-title {
-  font-size: 16px;
+img::before {
+  content: "We're sorry, the image below is broken :(";
 }
 
-.euro {
+img::after {
+  content: "(url: " attr(src) ")";
+}
+
+
+
+/* $Typography rules
+   ==================================== */
+
+/* nav - info - h3 - footer */
+body,
+.heading-p {
+  font-family: 'Raleway', sans-serif;
+  font-size: var(--f-size-p);
+  line-height: var(--l-height);
+}
+
+/* h1 - h2 */
+.heading-xb  {
+  font-size: var(--f-size-xb);
   font-weight: 700;
 }
 
-.neutral-star {
-  color: var(--main-bg-color)
+/* filters - Champ recherche / afficher plus */
+.heading-b  {
+  font-size: var(--f-size-b);
+  font-weight: 700;
 }
 
+/* details */
+.heading-s {
+  font-size: var(--f-size-s);
+  font-weight: 400;
+}
+
+
+
+/*
+  ========================================
+  $Layout
+  ========================================
+*/
+
+/* $Global layout
+   ==================================== */
+
+.screen {
+  width: clamp(var(--l--small), var(--l--margin), var(--l--large));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* $Gutters
+   ==================================== */
+
+.outer--s     {margin-top: var(--gap--s);}    /* 1 - 2 */
+.outer        {margin-top: var(--gap);}       /* 2 - 4 */
+.outer--b     {margin-top: var(--gap--b);}    /* 3 - 6 */
+
+.inner--s     {padding-top: var(--gap--s);}
+.inner        {padding-top: var(--gap);}
+.inner--b     {padding-top: var(--gap--b);}
+
+
+
+/* $Flexbox
+   ==================================== */
+
+/* Voir si on remonte flex-wrap ici */
+[class^="flex"] {
+  display: flex;
+}
+
+.flex__container {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+}
+
+  .flex--auto > * {
+    flex: 1 var(--l--item);
+  }
+
+  .f__item--1 {flex: 1;}
+  .f__item--2 {flex: 2;}
+  .f__item--3 {flex: 3;}
+  .f__item--4 {flex: 4;}
+  .f__item--5 {flex: 5;}
+
+
+
+/* $Header
+   ==================================== */
+
+.section-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+  .header__logo {
+    padding: 1.88rem 0;
+  }
+
+
+
+/* $Sections
+   ==================================== */
+
+.accomodation__results,
+.accomodation__well-liked,
+.section-footer {
+  background-color: var(--b-content);
+}
+
+
+/* $Footer
+   ==================================== */
+
+
+
+
+/*
+  ========================================
+  $Components
+  ========================================
+*/
+
+
+/* $Navigation
+   ==================================== */
+
+.navbar__item:link,
+.navbar__item:visited {
+  color: var(--c-main);
+  border-top: 2px solid transparent;
+  padding-top: 0.87rem;
+  display: inline-block;
+}
+
+.navbar__item:hover,
+.navbar__item:active,
+.navbar__item--active:link,
+ .navbar__item--active:visited {
+  color: var(--c-brand);
+  border-top: 2px solid var(--c-brand);
+}
+
+.navbar__item:last-child {
+  margin-left: 4.25rem;
+}
+
+
+/* $Cover
+   ==================================== */
+
+.section-cover {
+  padding-top: 1.88rem;
+}
+
+  .section-cover p {
+    padding-top: 0.5rem;
+  }
+
+
+/* $Search bar
+   ==================================== */
+
+.searchbar {}
+  .searchbar__container {}
+  .searchbar__icon {}
+  .searchbar__label-text {}
+  .searchbar__input-text {}
+  .searchbar__supporting-text {}
+
+
+/* $Filters
+   ==================================== */
+
+.fa-solid {
+  color: var(--c-brand);
+}
+
+.fa--inactive {
+  color: var(--b-content);
+}
+
+
+/* $Card
+   ==================================== */
+
+/*.panel {}
+  .panel__headline {}
+
+/* Card
+.card {}
+  .card__container {}
+  .card__details {}
+  .card__headline {}
+  .card__subhead {}
+  .card__supporting-text {}
+  .card__image {}
+  .card__button {}
+  .card__link {}
+/* Used for: feature-list ; team ; pricing ; location */
+
+/* Revoir les dimensions précises et créer des helpers : en vw ?
+.card--1-3 {width: 33%;}
+.card--3-1 {width: 66%;}*/
+
+.card__ {}
+
+/* to do :
+   une seule card avec des variations de vues,
+   un seul markup html
+
+hébergements à Marseille
+.card--column
+.card__figure
+.card__details
+  .card__headline
+  .card__pricing
+  .card__rating
+
+populaires
+.card
+.card__figure
+.card__details
+  .card__headline
+  .card__pricing
+
+.card__pricing--strong {
+  font-weight: 700;
+}
+
+  .card__rating
+    margin-top: auto;
+
+activités
+.card--column
+.card__figure
+.card__details
+  .card__headline
+
 /****** Hebergements And Populaires ***********/
+.section-accomodation,
 .hebergements-and-populaires {
   display: flex;
   justify-content: space-between;
 }
 
-.hebergements-and-populaires section {
-  background-color: var(--main-bg-color);
-  border-radius: 20px;
-  padding: 30px;
-  box-sizing: border-box;
-}
+  .accomodation__results,
+  .accomodation__well-liked,
+  .hebergements-and-populaires section {
+    background-color: var(--b-content);
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
 
-/****** Hebergements ***********/
-.hebergements {
-  width: 65%;
-}
+  .accomodation__results {
+    flex: 2;
+  }
 
-/****** Populaires ***********/
-.populaires {
-  width: 32%;
-}
+  .accomodation__well-liked {
+    flex: 1;
+  }
+
 
 .populaires-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.populaires-cards .card {
-  display: flex;
-  margin-top: 33px;
 }
 
 .populaires-cards img {
@@ -133,23 +420,46 @@ a {
   box-sizing: border-box;
 }
 
-.populaires-cards .card-title {
-  margin-top: 10px;
-  margin-bottom: 4px;
-}
-
-.populaires-cards .card-subtitle {
-  margin: 0;
-}
-
-.populaires-cards .card-rating {
-  margin-bottom: 5px;
+.card {
+  background-color: white;
+  border-radius: 1.25rem;
+  border: 5px solid var(--b-main);
+  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
 
+*/
 
 
-/* Le code ci-dessous correspond à la version responsive uniquement */
+/* $Sitemap
+   ==================================== */
+
+.sitemap {}
+  .sitemap__headline {}
+  .sitemap__link:link {}  /* ou label */
+  .sitemap__link:visited {}
+  .sitemap__link:hover {}
+  .sitemap__link:active {}
+
+
+
+
+
+
+/*
+  ========================================
+  $Responsive
+  ========================================
+*/
+
+/* $Tablet >= 768px
+   ==================================== */
+
+/* 
+@media screen and (width >= 48rem) {}
+/* @container (min-width: 320px) and (max-width: 640px) {}
+@media screen and (48rem <= width <= 64rem) {}
+> à tester
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
@@ -186,7 +496,15 @@ a {
   }
 }
 
-/* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
-  /* ... */
+
+/* $Mobile < 768px
+   ==================================== */
+
+@media screen and (width < 48rem) {
+
+
+/* .navbar__item: border-top: 2px solid var(--b-content); */
+
+
 }
+
