@@ -80,8 +80,10 @@ h1,
 input,
 button,
 select,
-textarea {
+textarea,
+::placeholder {
   font: inherit;
+  color: currentColor;
 }
 
 a,
@@ -104,6 +106,7 @@ input[type="number"],
 select,
 textarea {
   font-size: var(--f-size-p);
+  color: currentColor;
 }
 
 ol, ul, menu {
@@ -294,9 +297,27 @@ body,
   }
 
 
-/* $Search bar
+/* $Search section
    ==================================== */
 
+.section-search > * {
+  padding-top: 2.19rem;
+}
+
+.search__form {
+  display: flex;
+}
+
+.form__icon {
+  background-color: var(--b-content);
+  padding: 0.94rem 1rem;
+  border-radius: 0.9375rem 0 0 0.9375rem;
+}
+
+.form__label {
+  border: 1px solid var(--b-content);
+  padding: 0 1.5rem;
+}
 .searchbar {}
   .searchbar__container {}
   .searchbar__icon {}
@@ -304,11 +325,26 @@ body,
   .searchbar__input-text {}
   .searchbar__supporting-text {}
 
+.form__button {
+  color: var(--b-main);
+  background-color: var(--c-brand);
+  padding: 0.94rem 1rem;
+  border-radius: 0 0.9375rem 0.9375rem 0;
+}
+
+  .form__button--mobile {
+    display: none !important;
+    color: var(--b-main);
+  }
+
 
 /* $Filters
    ==================================== */
 
-.fa-solid {
+
+.filters__button i,
+.search__info i,
+.fa-star {
   color: var(--c-brand);
 }
 
@@ -319,6 +355,11 @@ body,
 
 /* $Card
    ==================================== */
+
+article,
+.card {
+  background-color: var(--b-main);
+}
 
 /*.panel {}
   .panel__headline {}

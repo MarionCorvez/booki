@@ -5,7 +5,7 @@
 1. [X] Mettre en place l'environnement de développement
 2. [X] Découper la maquette
 3. [X] Intégrer le header du projet
-4. [ ] Ajouter le formulaire de recherche
+4. [X] Ajouter le formulaire de recherche
 5. [ ] Ajouter la partie Filtres
 6. [ ] Réaliser la "card" présente dans "Hébergements à Marseille"
 7. [ ] Gérer l'affichage des "cards" du conteneur "Hébergements à Marseille"

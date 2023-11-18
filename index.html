@@ -43,10 +43,12 @@
 		<section class="section-search">
 
 			<form action="#" method="get" class="search__form">
-				<i class="fa-solid fa-location-dot"></i>
-				<input type="search" name="location" placeholder="Marseille, France" />
-				<i class="fa-solid fa-magnifying-glass"></i>
-				<input type="submit" value="Rechercher" />
+				<i class="fa-solid fa-location-dot form__icon"></i>
+				<input type="search" name="location" placeholder="Marseille, France" class="form__label heading-b" />
+				<button type="button" class="form__button heading-b">
+					<i class="fa-solid fa-magnifying-glass form__button--mobile"></i>
+					<span>Rechercher</span>
+				</button>
 			</form>
 
 			<div class="search__filters">
