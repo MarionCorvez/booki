@@ -39,16 +39,16 @@
   --l-height:       1;
 
 /* Layout */
-  --l--small:       20rem;      /* Minimun width */
-  --l--large:       90rem;      /* Max width for large screen */
-  --l--item:        25rem;      /* Minimum width for an item */
-  --l--margin:      90%;        /* External margin */
+  --l--small:       20rem;      /* minimun width */
+  --l--large:       90rem;      /* max width for large screen */
+  --l--item:        25rem;      /* minimum width for an item */
+  --l--margin:      90%;        /* external margin */
 
 /* Gutters */
-  --gap--s:         clamp(1rem, 2vmax, 2rem);
-  --gap:            clamp(2rem, 4vmax, 4rem);
-  --gap--b:         clamp(3rem, 6vmax, 6rem);
-  --gap--xb:        clamp(4rem, 7vw, 9rem);
+  --gap--s:         0.9375rem;  /* footer item - gap mobile */
+  --gap:            1.25rem;    /* footer */
+  --gap--b:         1.875rem;   /* gap desktop */
+  --gap--xb:        2.1875rem;  /* between sections */
 
 }
 
@@ -186,13 +186,13 @@ body,
 /* $Gutters
    ==================================== */
 
-.outer--s     {margin-top: var(--gap--s);}    /* 1 - 2 */
-.outer        {margin-top: var(--gap);}       /* 2 - 4 */
-.outer--b     {margin-top: var(--gap--b);}    /* 3 - 6 */
-
-.inner--s     {padding-top: var(--gap--s);}
-.inner        {padding-top: var(--gap);}
-.inner--b     {padding-top: var(--gap--b);}
+.section-cover,
+.section-search > *,
+.section-accomodation,
+.section-activities,
+.section-footer {
+  margin-top: var(--gap--xb);
+}
 
 
 
@@ -200,15 +200,15 @@ body,
    ==================================== */
 
 /* Voir si on remonte flex-wrap ici */
-[class^="flex"] {
+[class*="flex"] {
   display: flex;
+  flex-wrap: wrap;
 }
 
-.flex__container {
-  flex-wrap: wrap;
+.flex-container {
   justify-content: center;
   align-items: center;
-  gap: var(--gap);
+  gap: var(--gap--b);
 }
 
   .flex--auto > * {
@@ -226,16 +226,14 @@ body,
 /* $Header
    ==================================== */
 
-.section-header {
-  display: flex;
-  flex-wrap: wrap;
+.section-header--flex {
   justify-content: space-between;
   align-items: flex-start;
 }
-  .header__logo {
-    padding: 1.88rem 0;
-  }
 
+  .header__logo {
+    padding: var(--gap--b) 0;
+  }
 
 
 /* $Sections
@@ -268,7 +266,7 @@ body,
 .navbar__item:visited {
   color: var(--c-main);
   border-top: 2px solid transparent;
-  padding-top: 0.87rem;
+  padding-top: 0.875rem;
   display: inline-block;
 }
 
@@ -288,10 +286,6 @@ body,
 /* $Cover
    ==================================== */
 
-.section-cover {
-  padding-top: 1.88rem;
-}
-
   .section-cover p {
     padding-top: 0.5rem;
   }
@@ -300,36 +294,22 @@ body,
 /* $Search section
    ==================================== */
 
-.section-search > * {
-  padding-top: 2.19rem;
-}
-
-.search__form {
-  display: flex;
-}
-
 .form__icon {
   background-color: var(--b-content);
-  padding: 0.94rem 1rem;
-  border-radius: 0.9375rem 0 0 0.9375rem;
+  padding: var(--gap--s) 1rem;
+  border-radius: var(--gap--s) 0 0 var(--gap--s);
 }
 
 .form__label {
   border: 1px solid var(--b-content);
   padding: 0 1.5rem;
 }
-.searchbar {}
-  .searchbar__container {}
-  .searchbar__icon {}
-  .searchbar__label-text {}
-  .searchbar__input-text {}
-  .searchbar__supporting-text {}
 
 .form__button {
   color: var(--b-main);
   background-color: var(--c-brand);
-  padding: 0.94rem 1rem;
-  border-radius: 0 0.9375rem 0.9375rem 0;
+  padding: var(--gap--s) 1rem;
+  border-radius: 0 var(--gap--s) var(--gap--s) 0;
 }
 
   .form__button--mobile {
@@ -341,16 +321,50 @@ body,
 /* $Filters
    ==================================== */
 
-
-.filters__button i,
-.search__info i,
-.fa-star {
-  color: var(--c-brand);
+.search__filters--flex,
+.panel-filters--flex,
+.search__info--flex {
+  align-items: center;
+  gap: 0.625rem;
 }
 
-.fa--inactive {
-  color: var(--b-content);
-}
+  .filters__button {
+    padding: 0.875rem 1.1875rem;
+    border: 2px solid var(--c-filters);
+    border-radius: 1.5625rem;
+    font-weight: 700;
+  }
+
+  .filters__button:hover,
+  .filters__button:focus,
+  .filters__button:active,
+  .filters__button--active{
+    background-color:var(--c-brand--light);
+  }
+
+    .filters__button i {
+      padding-right: 0.25rem;
+    }
+
+    .filters__button i,
+    .search__info i,
+    .fa-star {
+      color: var(--c-brand);
+    }
+
+    .fa--inactive {
+      color: var(--b-content);
+    }
+
+    .fa-info {
+      text-align: center;
+      font-size: var(--f-size-s);
+      border: 1px solid var(--c-filters);
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      padding: 0.25rem;
+    }
 
 
 /* $Card
