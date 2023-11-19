@@ -7,7 +7,7 @@
 3. [X] Intégrer le header du projet
 4. [X] Ajouter le formulaire de recherche
 5. [X] Ajouter la partie Filtres
-6. [ ] Réaliser la "card" présente dans "Hébergements à Marseille"
+6. [X] Réaliser la "card" présente dans "Hébergements à Marseille"
 7. [ ] Gérer l'affichage des "cards" du conteneur "Hébergements à Marseille"
 8. [ ] Intégrer le conteneur "Activités à Marseille"
 9. [ ] Implémenter le footer

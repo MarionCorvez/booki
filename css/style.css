@@ -370,31 +370,35 @@ body,
 /* $Card
    ==================================== */
 
-article,
-.card {
-  background-color: var(--b-main);
-}
+.panel-card {}
 
-/*.panel {}
-  .panel__headline {}
+  .card--flex {
+    flex-direction: column;
+    background-color: var(--b-main);
+    border-radius: 1.25rem;
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
+  }
 
-/* Card
-.card {}
-  .card__container {}
-  .card__details {}
-  .card__headline {}
-  .card__subhead {}
-  .card__supporting-text {}
-  .card__image {}
-  .card__button {}
-  .card__link {}
-/* Used for: feature-list ; team ; pricing ; location */
+    .card__image {
+      border-radius: 1.25rem 1.25rem 0rem 0rem;
+      border: 5px solid var(--b-main);
+    }
 
-/* Revoir les dimensions précises et créer des helpers : en vw ?
-.card--1-3 {width: 33%;}
-.card--3-1 {width: 66%;}*/
+    .card__details {
+      padding: 0.5rem 0.9375rem 0.9375rem 0.9375rem;
+    }
 
-.card__ {}
+      .card__headline,
+      .card__subhead--strong {
+        font-weight: 700;
+      }
+
+      .card__subhead {
+        padding: 0.5rem 0;
+      }
+        
+      .card__icons {}
+
 
 /* to do :
    une seule card avec des variations de vues,
@@ -409,11 +413,6 @@ hébergements à Marseille
   .card__rating
 
 populaires
-.card
-.card__figure
-.card__details
-  .card__headline
-  .card__pricing
 
 .card__pricing--strong {
   font-weight: 700;
@@ -483,7 +482,6 @@ activités
 }
 
 
-*/
 
 
 /* $Sitemap
