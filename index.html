@@ -15,7 +15,7 @@
 
 <body class="screen">
 
-	<header class="section-header--flex">
+	<header class="section-header flex--between">
 		<a href="#" class="header__logo">
 			<svg xmlns="http://www.w3.org/2000/svg" width="62" height="19" viewBox="0 0 62 19" fill="none">
 				<path d="M5.52161 0C6.57874 0.0188771 7.50373 0.264282 8.29657 0.736214C9.08942 1.20815 9.69349 1.84054 10.1088 2.63338C10.543 3.42623 10.7601 4.3229 10.7601 5.3234C10.7601 6.05961 10.6185 6.75807 10.3353 7.41878C10.071 8.06061 9.70293 8.63636 9.231 9.14605C9.91058 9.65574 10.4391 10.2881 10.8167 11.0432C11.2131 11.7983 11.4113 12.6289 11.4113 13.535C11.4113 14.4978 11.1754 15.385 10.7034 16.1967C10.2315 17.0084 9.59911 17.6597 8.80626 18.1505C8.01341 18.6225 7.13562 18.8584 6.17288 18.8584H0V0H5.52161ZM2.4918 2.54843V8.15499H5.52161C6.29558 8.15499 6.94684 7.88127 7.47541 7.33383C8.00397 6.78639 8.26826 6.11624 8.26826 5.3234C8.26826 4.53055 8.00397 3.86985 7.47541 3.34128C6.96572 2.81272 6.31446 2.54843 5.52161 2.54843H2.4918ZM2.4918 10.7034V16.31H6.17288C6.94684 16.31 7.59811 16.0457 8.12668 15.5171C8.65524 14.9697 8.91952 14.309 8.91952 13.535C8.91952 12.7422 8.65524 12.072 8.12668 11.5246C7.59811 10.9771 6.94684 10.7034 6.17288 10.7034H2.4918Z" fill="#0065FC"/>
@@ -51,48 +51,50 @@
 				</button>
 			</form>
 
-			<div class="search__filters--flex">
+			<div class="search__filters flex--a-center">
 				<p class="heading-b">Filtres</p>
-				<div class="panel-filters--flex">
-					<button class="filters__button">
+				<div class="panel-filters flex--a-center">
+					<button class="filters__button fw-700">
 						<i class="fa-solid fa-money-bill-wave"></i>
 						Economique
 					</button>
-					<button class="filters__button">
+					<button class="filters__button fw-700">
 						<i class="fa-solid fa-person"></i>
 						Familial
 					</button>
-					<button class="filters__button">
+					<button class="filters__button fw-700">
 						<i class="fa-solid fa-heart"></i>
 						Romantique
 					</button>
-					<button class="filters__button filters__button--active">
+					<button class="filters__button fw-700 filters__button--active">
 						<i class="fa-solid fa-fire"></i>
 						Nos pépites
 					</button>
 				</div>
 			</div>
 
-			<div class="search__info--flex">
+			<div class="search__info flex--a-center">
 				<i class="fa-solid fa-info"></i>
 				Plus de 500 logements sont disponibles dans cette ville
 			</div>
 
 		</section>
 
-		<section class="section-accomodation" id="hebergements">
+		<section class="section-accomodation flex--between" id="hebergements">
 			
-			<div class="accomodation__results">
+			<div class="accomodation__results f--2">
 				<h2 class="heading-xb">Hébergements à Marseille</h2>
 
-				<div class="panel-card">
+				<div class="panel--flex">
 
-					<article>
-						<a href="#" class="card--flex">
-							<img src="images/hebergements/fred-kleber.jpg" alt="" class="card__image">
+					<article class="f--auto">
+						<a href="#" class="card--flex flex--column">
+							<div class="panel__image">
+								<img src="images/hebergements/fred-kleber.jpg" alt="" class="card__image">								
+							</div>
 							<div class="card__details">
-								<h3 class="heading-p card__headline">Hôtel du port</h3>
-								<p class="heading-xs card__subhead">Nuit à partir de 52 <span class="card__subhead--strong">€</span></p>
+								<h3 class="heading-p fw-700">Hôtel du port</h3>
+								<p class="heading-xs card__subhead">Nuit à partir de 52 <span class="fw-700">€</span></p>
 								<div class="card__icons">
 									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
 									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
@@ -104,137 +106,177 @@
 						</a>
 					</article>
 
-
-
-
-
-					<article>
-						<a href="#">
-							<img src="images/hebergements/febrian-zakaria.jpg" alt="">
-							<div>
-								<h3>Hôtel Chez Amina</h3>
-								<p class="heading-xs">Nuit à partir de 96 <span>€</span></p>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+					<article class="f--auto">
+						<a href="#" class="card--flex flex--column">
+							<div class="panel__image">
+								<img src="images/hebergements/febrian-zakaria.jpg" alt="" class="card__image">
+							</div>
+							<div class="card__details">
+								<h3 class="heading-p fw-700">Hôtel Chez Amina</h3>
+								<p class="heading-xs card__subhead">Nuit à partir de 96 <span class="fw-700">€</span></p>
+								<div class="card__icons">
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+								</div>
 							</div>
 						</a>
 					</article>
 
-					<article>
-						<a href="#">
-							<img src="images/hebergements/reisetopia.jpg" alt="">
-							<div>
-								<h3>Hôtel Les mouettes</h3>
-								<p class="heading-xs">Nuit à partir de 76 <span>€</span></p>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+					<article class="f--auto">
+						<a href="#" class="card--flex flex--column">
+							<div class="panel__image">
+								<img src="images/hebergements/reisetopia.jpg" alt="" class="card__image">
+							</div>
+							<div class="card__details">
+								<h3 class="heading-p fw-700">Hôtel Les mouettes</h3>
+								<p class="heading-xs card__subhead">Nuit à partir de 76 <span class="fw-700">€</span></p>
+								<div class="card__icons">
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+								</div>
 							</div>
 						</a>
 					</article>
 
-					<article>
-						<a href="#">
-							<img src="images/hebergements/annie-spratt.jpg" alt="">
-							<div>
-								<h3>Hôtel de la mer</h3>
-								<p class="heading-xs">Nuit à partir de 46 <span>€</span></p>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+					<article class="f--auto">
+						<a href="#" class="card--flex flex--column">
+							<div class="panel__image">
+								<img src="images/hebergements/annie-spratt.jpg" alt="" class="card__image">
+							</div>
+							<div class="card__details">
+								<h3 class="heading-p fw-700">Hôtel de la mer</h3>
+								<p class="heading-xs card__subhead">Nuit à partir de 46 <span class="fw-700">€</span></p>
+								<div class="card__icons">
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+								</div>
 							</div>
 						</a>
 					</article>
 
-					<article>
-						<a href="#">
-							<img src="images/hebergements/marcus-loke.jpg" alt="">
-							<div>
-								<h3>Auberge La Canebière</h3>
-								<p class="heading-xs">Nuit à partir de 25 <span>€</span></p>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+					<article class="f--auto">
+						<a href="#" class="card--flex flex--column">
+							<div class="panel__image">
+								<img src="images/hebergements/marcus-loke.jpg" alt="" class="card__image">
+							</div>
+							<div class="card__details">
+								<h3 class="heading-p fw-700">Auberge La Canebière</h3>
+								<p class="heading-xs card__subhead">Nuit à partir de 25 <span class="fw-700">€</span></p>
+								<div class="card__icons">
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+								</div>
 							</div>
 						</a>
 					</article>
 
-					<article>
-						<a href="#">
-							<img src="images/hebergements/nicate-lee.jpg" alt="">
-							<div>
-								<h3>Auberge Le Panier</h3>
-								<p class="heading-xs">Nuit à partir de 23 <span>€</span></p>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-								<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+					<article class="f--auto">
+						<a href="#" class="card--flex flex--column">
+							<div class="panel__image">
+								<img src="images/hebergements/nicate-lee.jpg" alt="" class="card__image">
+							</div>
+							<div class="card__details">
+								<h3 class="heading-p fw-700">Auberge Le Panier</h3>
+								<p class="heading-xs card__subhead">Nuit à partir de 23 <span class="fw-700">€</span></p>
+								<div class="card__icons">
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+								</div>
 							</div>
 						</a>
 					</article>
 
 				</div>
 
+				<div class="heading-b accomodation__more-results">
+					<a href="#" class="accomodation__cta">Afficher plus</a>
+				</div>
+
+
 			</div>
 
-			<div class="accomodation__well-liked">
-				<h2>Les plus populaires</h2>				
-				<i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+			<div class="accomodation__well-liked f--1">
 
-				<article>
-					<a href="#">
-						<img src="images/hebergements/emile-guillemot.jpg" alt="">
-						<div>
-							<h3>Auberge la Canebière</h3>
-							<p class="heading-xs">Nuit à partir de 25 <span>€</span></p>
-							<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-							<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-							<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-							<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-							<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
-						</div>
-					</a>
-				</article>
+				<div class="flex--between-a-center">
+					<h2>Les plus populaires</h2>				
+					<i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+				</div>
 
-				<article>
-					<a href="#">
-						<img src="images/hebergements/aw-creative.jpg" alt="">
-						<div>
-							<h3>Chambres d'hôtes Au coeur de l'eau</h3>
-							<p class="heading-xs">Nuit à partir de 71 <span>€</span></p>
-							<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-							<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-							<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-							<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-							<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
-						</div>
-					</a>
-				</article>
 
-				<article>
-					<a href="#">
-						<img src="images/hebergements/febrian-zakaria2.jpg" alt="">
-						<div>
-							<h3>Hôtel Bleu et Blanc</h3>
-							<p class="heading-xs">Nuit à partir de 68 <span>€</span></p>
-							<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-							<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-							<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-							<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-							<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
-						</div>
-					</a>
-				</article>
+				<div class="panel--flex flex--column">
+
+					<article>
+						<a href="#" class="card--flex">
+							<div class="panel__image panel__image--popular f--2">
+								<img src="images/hebergements/emile-guillemot.jpg" alt="" class="card__image--popular">								
+							</div>
+							<div class="card__details f--3 flex--column">
+								<h3 class="heading-p fw-700">Auberge la Canebière</h3>
+								<p class="heading-xs card__subhead">Nuit à partir de 25 <span class="fw-700">€</span></p>
+								<div class="card__icons card__icons--popular">
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+								</div>
+							</div>
+						</a>
+					</article>
+
+					<article>
+						<a href="#" class="card--flex">
+							<div class="panel__image panel__image--popular f--2">
+								<img src="images/hebergements/aw-creative.jpg" alt="" class="card__image--popular">								
+							</div>
+							<div class="card__details f--3 flex--column">
+								<h3 class="heading-p fw-700">Chambres d'hôtes Au coeur de l'eau</h3>
+								<p class="heading-xs card__subhead">Nuit à partir de 71 <span class="fw-700">€</span></p>
+								<div class="card__icons card__icons--popular">
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+								</div>
+							</div>
+						</a>
+					</article>
+
+					<article>
+						<a href="#" class="card--flex">
+							<div class="panel__image panel__image--popular f--2">
+								<img src="images/hebergements/febrian-zakaria2.jpg" alt="" class="card__image--popular">								
+							</div>
+							<div class="card__details flex--column f--3">
+								<h3 class="heading-p fw-700">Hôtel Bleu et Blanc</h3>
+								<p class="heading-xs card__subhead">Nuit à partir de 68 <span class="fw-700">€</span></p>
+								<div class="card__icons card__icons--popular">
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+									<i class="fa-xs fa-solid fa-star fa--inactive" aria-hidden="true"></i>
+								</div>
+							</div>
+						</a>
+					</article>
+				</div>	
 
 			</div>
 

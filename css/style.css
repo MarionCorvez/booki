@@ -39,12 +39,13 @@
   --l-height:       1;
 
 /* Layout */
-  --l--small:       20rem;      /* minimun width */
-  --l--large:       90rem;      /* max width for large screen */
-  --l--item:        25rem;      /* minimum width for an item */
-  --l--margin:      90%;        /* external margin */
+  --l--small:       320px;      /* minimun width */
+  --l--large:       1440px;     /* max width for large screen */
+  --l--item:        200px;      /* minimum width for an item */
+  --l--margin:      95%;        /* external margin */
 
 /* Gutters */
+  --gap--xs:        0.5rem;     /* tbd */
   --gap--s:         0.9375rem;  /* footer item - gap mobile */
   --gap:            1.25rem;    /* footer */
   --gap--b:         1.875rem;   /* gap desktop */
@@ -145,26 +146,29 @@ body,
   font-family: 'Raleway', sans-serif;
   font-size: var(--f-size-p);
   line-height: var(--l-height);
+  font-weight: 400;
 }
 
 /* h1 - h2 */
 .heading-xb  {
   font-size: var(--f-size-xb);
-  font-weight: 700;
 }
 
 /* filters - Champ recherche / afficher plus */
 .heading-b  {
   font-size: var(--f-size-b);
-  font-weight: 700;
 }
 
 /* details */
 .heading-s {
   font-size: var(--f-size-s);
-  font-weight: 400;
 }
 
+.fw-700,
+.heading-b,
+.heading-xb {
+  font-weight: 700;
+}
 
 
 /*
@@ -186,6 +190,7 @@ body,
 /* $Gutters
    ==================================== */
 
+/* Voir quelles gutters peuvent devenir des flex gaps */
 .section-cover,
 .section-search > *,
 .section-accomodation,
@@ -194,42 +199,35 @@ body,
   margin-top: var(--gap--xb);
 }
 
+.accomodation__more-results,
+.panel--flex {
+  margin-top: var(--gap--b);
+}
 
 
 /* $Flexbox
    ==================================== */
 
-/* Voir si on remonte flex-wrap ici */
 [class*="flex"] {
   display: flex;
   flex-wrap: wrap;
 }
 
-.flex-container {
-  justify-content: center;
-  align-items: center;
-  gap: var(--gap--b);
-}
+[class*="column"]   {flex-direction: column;}
+[class*="between"]  {justify-content: space-between;}
+[class*="a-center"] {align-items: center;}
 
-  .flex--auto > * {
-    flex: 1 var(--l--item);
-  }
+.f--1               {flex: 1;}
+.f--2               {flex: 2;}
+.f--3               {flex: 3;}
+.f--4               {flex: 4;}
+.f--5               {flex: 5;}
 
-  .f__item--1 {flex: 1;}
-  .f__item--2 {flex: 2;}
-  .f__item--3 {flex: 3;}
-  .f__item--4 {flex: 4;}
-  .f__item--5 {flex: 5;}
-
+.f--auto            {flex: 1 var(--l--item);}
 
 
 /* $Header
    ==================================== */
-
-.section-header--flex {
-  justify-content: space-between;
-  align-items: flex-start;
-}
 
   .header__logo {
     padding: var(--gap--b) 0;
@@ -244,6 +242,24 @@ body,
 .section-footer {
   background-color: var(--b-content);
 }
+
+.accomodation__cta:hover,
+.accomodation__cta:active,
+.accomodation__cta:focus {
+  color: var(--c-brand);
+}
+
+
+
+.section-accomodation {
+  gap: 2.5rem;
+}
+
+  .accomodation__results,
+  .accomodation__well-liked {
+    border-radius: 0.9375rem;
+    padding: 1.875rem;
+  }
 
 
 /* $Footer
@@ -287,7 +303,7 @@ body,
    ==================================== */
 
   .section-cover p {
-    padding-top: 0.5rem;
+    padding-top: var(--gap--xs);
   }
 
 
@@ -321,18 +337,18 @@ body,
 /* $Filters
    ==================================== */
 
-.search__filters--flex,
-.panel-filters--flex,
-.search__info--flex {
-  align-items: center;
+.search__filters,
+.panel-filters,
+.search__info {
   gap: 0.625rem;
 }
+
+
 
   .filters__button {
     padding: 0.875rem 1.1875rem;
     border: 2px solid var(--c-filters);
     border-radius: 1.5625rem;
-    font-weight: 700;
   }
 
   .filters__button:hover,
@@ -348,7 +364,8 @@ body,
 
     .filters__button i,
     .search__info i,
-    .fa-star {
+    .fa-star,
+    .fa-chart-line {
       color: var(--c-brand);
     }
 
@@ -370,117 +387,55 @@ body,
 /* $Card
    ==================================== */
 
-.panel-card {}
+.panel--flex {
+  gap: var(--gap--b);
+}
 
-  .card--flex {
-    flex-direction: column;
+
+  .card {
     background-color: var(--b-main);
     border-radius: 1.25rem;
     box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
   }
 
-    .card__image {
-      border-radius: 1.25rem 1.25rem 0rem 0rem;
+  .card--flex {
+    background-color: var(--b-main);
+    border-radius: 1.25rem;
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
+  }
+
+
+    .panel__image {
       border: 5px solid var(--b-main);
     }
+
+    .panel__image,
+    .card__image {
+      border-radius: 1.25rem 1.25rem 0rem 0rem;
+    }
+
+      .card__image {
+        height: 7.75rem;
+        width: 100%;
+      }
+
+      .panel__image--popular,
+      .card__image--popular {
+        border-radius: 1.25rem 0rem 0rem 1.25rem; 
+        height: 9.125rem;
+      }
 
     .card__details {
       padding: 0.5rem 0.9375rem 0.9375rem 0.9375rem;
     }
 
-      .card__headline,
-      .card__subhead--strong {
-        font-weight: 700;
-      }
-
       .card__subhead {
         padding: 0.5rem 0;
       }
         
-      .card__icons {}
-
-
-/* to do :
-   une seule card avec des variations de vues,
-   un seul markup html
-
-hébergements à Marseille
-.card--column
-.card__figure
-.card__details
-  .card__headline
-  .card__pricing
-  .card__rating
-
-populaires
-
-.card__pricing--strong {
-  font-weight: 700;
-}
-
-  .card__rating
-    margin-top: auto;
-
-activités
-.card--column
-.card__figure
-.card__details
-  .card__headline
-
-/****** Hebergements And Populaires ***********/
-.section-accomodation,
-.hebergements-and-populaires {
-  display: flex;
-  justify-content: space-between;
-}
-
-  .accomodation__results,
-  .accomodation__well-liked,
-  .hebergements-and-populaires section {
-    background-color: var(--b-content);
-    border-radius: 20px;
-    padding: 30px;
-    box-sizing: border-box;
-  }
-
-  .accomodation__results {
-    flex: 2;
-  }
-
-  .accomodation__well-liked {
-    flex: 1;
-  }
-
-
-.populaires-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.populaires-cards img {
-  width: 33%;
-  height: 136px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.populaires-cards .card-content {
-  width: 67%;
-  padding-left: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-.card {
-  background-color: white;
-  border-radius: 1.25rem;
-  border: 5px solid var(--b-main);
-  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-}
-
+      .card__icons--popular {
+        margin-top: auto;
+      }
 
 
 
@@ -509,9 +464,9 @@ activités
    ==================================== */
 
 /* 
-@media screen and (width >= 48rem) {}
+@media screen and (width >= 768px) {}
 /* @container (min-width: 320px) and (max-width: 640px) {}
-@media screen and (48rem <= width <= 64rem) {}
+@media screen and (768px <= width <= 1024) {}
 > à tester
 
 /****** Media queries ***********/
@@ -553,7 +508,7 @@ activités
 /* $Mobile < 768px
    ==================================== */
 
-@media screen and (width < 48rem) {
+@media screen and (width < 768px) {
 
 
 /* .navbar__item: border-top: 2px solid var(--b-content); */
