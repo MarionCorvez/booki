@@ -36,7 +36,7 @@
   --f-size-p:       1rem;       /* body - footer - h3 - nav - info */
   --f-size-b:       1.125rem;   /* filters */
   --f-size-xb:      1.375rem;   /* h1 - h2 */
-  --l-height:       1;
+  --l-height:       1.4;
 
 /* Layout */
   --l--small:       320px;      /* minimun width */
@@ -120,6 +120,7 @@ img::before,
 img::after {
   display: block;
   max-width: 100%;
+  width: 100%;
   object-fit: cover;
   vertical-align: middle;
   position: relative;
@@ -223,7 +224,7 @@ body,
 .f--4               {flex: 4;}
 .f--5               {flex: 5;}
 
-.f--auto            {flex: 1 var(--l--item);}
+
 
 
 /* $Header
@@ -237,29 +238,28 @@ body,
 /* $Sections
    ==================================== */
 
-.accomodation__results,
-.accomodation__well-liked,
-.section-footer {
-  background-color: var(--b-content);
-}
-
-.accomodation__cta:hover,
-.accomodation__cta:active,
-.accomodation__cta:focus {
-  color: var(--c-brand);
-}
-
-
-
 .section-accomodation {
   gap: 2.5rem;
 }
 
+  .accomodation__cta:hover,
+  .accomodation__cta:active,
+  .accomodation__cta:focus {
+    color: var(--c-brand);
+  }
+
   .accomodation__results,
-  .accomodation__well-liked {
+  .accomodation__popular,
+  .section-footer {
+    background-color: var(--b-content);
+  }
+
+  .accomodation__results,
+  .accomodation__popular {
     border-radius: 0.9375rem;
     padding: 1.875rem;
   }
+
 
 
 /* $Footer
@@ -387,46 +387,44 @@ body,
 /* $Card
    ==================================== */
 
-.panel--flex {
-  gap: var(--gap--b);
+.section-activities {
+  padding: var(--gap--b);  
 }
 
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap--b);
+  margin-top: var(--gap--b);
+}
+
+.panel--column {
+  flex-direction: column;
+}
+
+  .panel__item--auto {
+    flex: 1 var(--l--item);
+    height: 100%;   
+  }
 
   .card {
+    display: flex;
     background-color: var(--b-main);
     border-radius: 1.25rem;
     box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
   }
 
-  .card--flex {
-    background-color: var(--b-main);
-    border-radius: 1.25rem;
-    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
+  .card--column {
+    flex-direction: column;
   }
-
-
-    .panel__image {
-      border: 5px solid var(--b-main);
-    }
-
-    .panel__image,
-    .card__image {
-      border-radius: 1.25rem 1.25rem 0rem 0rem;
-    }
-
-      .card__image {
-        height: 7.75rem;
-        width: 100%;
-      }
-
-      .panel__image--popular,
-      .card__image--popular {
-        border-radius: 1.25rem 0rem 0rem 1.25rem; 
-        height: 9.125rem;
-      }
 
     .card__details {
       padding: 0.5rem 0.9375rem 0.9375rem 0.9375rem;
+    }
+
+    .card__details--activities {
+      padding: 1.25rem 1.1875rem;
+      height: 2.5rem;
     }
 
       .card__subhead {
@@ -436,6 +434,37 @@ body,
       .card__icons--popular {
         margin-top: auto;
       }
+
+/* Quelle est la meilleure solution ?
+   1. Répéter 2 x la même bordure dans 2 classes diff ?
+   2. Attribuer à 2 classes la même bordure ?  
+ */
+
+  .card__container-image--bd {
+    border: 5px solid var(--b-main);
+  }
+
+  .card__container-image--bd-top,
+  .card__container-image--bd-top img {
+    border-radius: 1.25rem 1.25rem 0rem 0rem;
+  }
+
+  .card__container-image--bd-left,
+  .card__container-image--bd-left img {
+    border-radius: 1.25rem 0rem 0rem 1.25rem; 
+  }
+
+    .card__image--accomodation {
+      height: 7.75rem;
+    }
+
+    .card__image--popular {
+      height: 9.125rem;
+    }
+
+    .card__image--activities {
+      height: 23.75rem;
+    }
 
 
 
