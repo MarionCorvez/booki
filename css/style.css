@@ -242,11 +242,7 @@ body,
   gap: 2.5rem;
 }
 
-  .accomodation__cta:hover,
-  .accomodation__cta:active,
-  .accomodation__cta:focus {
-    color: var(--c-brand);
-  }
+
 
   .accomodation__results,
   .accomodation__popular,
@@ -265,7 +261,21 @@ body,
 /* $Footer
    ==================================== */
 
+.section-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap--b);
+  margin-top: var(--gap--xb);
+}
 
+  .footer__content {
+    flex: 1 30%;
+    padding: 1.25rem;
+  }
+
+    .footer__menu li {
+      padding-top: 0.9375rem;
+    }
 
 
 /*
@@ -296,6 +306,22 @@ body,
 
 .navbar__item:last-child {
   margin-left: 4.25rem;
+}
+
+
+/* $Links
+   ==================================== */
+
+.cta--branded:hover,
+.cta--branded:active,
+.cta--branded:focus,
+.panel__item:hover .heading-p,
+.panel__item:active .heading-p,
+.panel__item:focus .heading-p,
+.panel__item--auto:hover .heading-p,
+.panel__item--auto:active .heading-p,
+.panel__item--auto:focus .heading-p {
+  color: var(--c-brand);
 }
 
 
@@ -423,7 +449,7 @@ body,
     }
 
     .card__details--activities {
-      padding: 1.25rem 1.1875rem;
+      margin: 1.25rem 1.1875rem;
       height: 2.5rem;
     }
 
@@ -465,7 +491,6 @@ body,
     .card__image--activities {
       height: 23.75rem;
     }
-
 
 
 /* $Sitemap
