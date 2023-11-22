@@ -11,7 +11,7 @@
 7. [X] Gérer l'affichage des "cards" du conteneur "Hébergements à Marseille"
 8. [X] Intégrer le conteneur "Activités à Marseille"
 9. [X] Implémenter le footer
-10. [] Mettre en place le responsive design
+10. [ ] Mettre en place le responsive design
 11. [ ] Vérifier la qualité du code
 
 
