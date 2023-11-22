@@ -5,10 +5,9 @@
 */
 
 /* 1...............................Base */
-/* 2..............................Utils */
-/* 3.............................Layout */
-/* 4.........................Components */
-/* 5.........................Responsive */
+/* 2.............................Layout */
+/* 3.........................Components */
+/* 4.........................Responsive */
 
 
 
@@ -31,18 +30,21 @@
   --b-content:      #F2F2F2;    /* sections */
   --c-filters:      #D9D9D9;    /* filters border */
 
-/* Text */
-  --f-size-s:       0.875rem;   /* details */
-  --f-size-p:       1rem;       /* body - footer - h3 - nav - info */
-  --f-size-b:       1.125rem;   /* filters */
-  --f-size-xb:      1.375rem;   /* h1 - h2 */
+/* Text fluid */
+  --f-size-s:       clamp(0.75rem, 0.227vw + 0.693rem, 0.875rem); /* details */
+  --f-size-p:       clamp(0.875rem, 0.227vw + 0.818rem, 1rem);    /* body */
+  --f-size-b:       clamp(1rem, 0.227vw + 0.943rem, 1.125rem);    /* filters */
+  --f-size-xb:      clamp(1.25rem, 0.227vw + 1.193rem, 1.375rem); /* h1 - h2 */
   --l-height:       1.4;
 
 /* Layout */
   --l--small:       320px;      /* minimun width */
   --l--large:       1440px;     /* max width for large screen */
-  --l--item:        200px;      /* minimum width for an item */
+  --l--item:        240px;      /* minimum width for an item */
   --l--margin:      95%;        /* external margin */
+
+
+/* Margins */
 
 /* Gutters */
   --gap--xs:        0.5rem;     /* tbd */
@@ -147,7 +149,6 @@ body,
   font-family: 'Raleway', sans-serif;
   font-size: var(--f-size-p);
   line-height: var(--l-height);
-  font-weight: 400;
 }
 
 /* h1 - h2 */
@@ -183,15 +184,28 @@ body,
 
 .screen {
   width: clamp(var(--l--small), var(--l--margin), var(--l--large));
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 3.125rem;
+  margin-right: 3.125rem;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: 3.125rem minmax(320px, 1440px) 3.125rem;
+  margin: 0 auto;
+}
+
+.grid-main {
+  grid-column: 2 / -2;
+}
+
 
 
 /* $Gutters
    ==================================== */
 
-/* Voir quelles gutters peuvent devenir des flex gaps */
+/* Voir quelles gutters peuvent devenir des flex gaps
+   Voir évolution en mobile si factorisation possible
+ */
 .section-cover,
 .section-search > *,
 .section-accomodation,
@@ -262,14 +276,13 @@ body,
    ==================================== */
 
 .section-footer {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: var(--gap--b);
   margin-top: var(--gap--xb);
 }
 
   .footer__content {
-    flex: 1 30%;
     padding: 1.25rem;
   }
 
@@ -342,9 +355,9 @@ body,
   border-radius: var(--gap--s) 0 0 var(--gap--s);
 }
 
-.form__label {
+.form__placeholder {
   border: 1px solid var(--b-content);
-  padding: 0 1.5rem;
+  padding: 0 clamp(0.5rem, 1vmax, 1.5rem);
 }
 
 .form__button {
@@ -353,7 +366,7 @@ body,
   padding: var(--gap--s) 1rem;
   border-radius: 0 var(--gap--s) var(--gap--s) 0;
 }
-
+  .form__label {}
   .form__button--mobile {
     display: none !important;
     color: var(--b-main);
@@ -364,10 +377,29 @@ body,
    ==================================== */
 
 .search__filters,
-.panel-filters,
 .search__info {
   gap: 0.625rem;
 }
+
+.search__info {
+  display: flex;
+  align-items: center;
+}
+
+/*.gap {
+  gap: row-h col-v;
+  gap: 1.25rem 0.625rem;
+}
+*/
+
+.panel-filters {
+  gap: 1.25rem clamp(0.625rem, 1.3vmax, 1rem);
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+} 
+
 
 
 
@@ -400,13 +432,10 @@ body,
     }
 
     .fa-info {
-      text-align: center;
-      font-size: var(--f-size-s);
+      font-size: 0.75rem;
       border: 1px solid var(--c-filters);
-      width: 1.5rem;
-      height: 1.5rem;
       border-radius: 50%;
-      padding: 0.25rem;
+      padding: 0.25rem 0.5rem;
     }
 
 
@@ -420,7 +449,9 @@ body,
 .panel {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap--b);
+  gap: clamp(0.9375rem, 1.3vmax, 1.875rem);
+  /*15px à 30px*/
+/*  gap: var(--gap--b);*/
   margin-top: var(--gap--b);
 }
 
@@ -431,6 +462,10 @@ body,
   .panel__item--auto {
     flex: 1 var(--l--item);
     height: 100%;   
+  }
+
+  .panel__item--activities {
+    flex: 1 20%;
   }
 
   .card {
@@ -481,7 +516,7 @@ body,
   }
 
     .card__image--accomodation {
-      height: 7.75rem;
+      max-height: 7.75rem;
     }
 
     .card__image--popular {
@@ -514,59 +549,143 @@ body,
   ========================================
 */
 
-/* $Tablet >= 768px
+/* $Global < 1024px
    ==================================== */
 
-/* 
-@media screen and (width >= 768px) {}
-/* @container (min-width: 320px) and (max-width: 640px) {}
-@media screen and (768px <= width <= 1024) {}
-> à tester
-
-/****** Media queries ***********/
-/* Medium devices (tablets, less/equal than 1024px) */
-@media (max-width: 1024px) {
-  .hebergements-and-populaires {
+@media (width < 1024px) {
+  .search__filters {
+    flex-direction: column;
+    align-items: start;
+  }
+    .section-accomodation {
     flex-direction: column;
   }
+}  
 
-  .hebergements {
-    width: 100%;
-  }
+/* $Tablet > 768px and < 1024px
+   ==================================== */
 
-  .populaires {
-    width: 100%;
-    margin-top: 50px;
-  }
+@media (768px <= width <= 1024px) {
 
-  .populaires-cards {
-    display: flex;
+  .panel--popular {
     flex-direction: row;
-    justify-content: space-between;
   }
 
-  .populaires-cards a {
-    width: 30%;
-  }
+    .panel--popular article {
+      flex: 1;
+    }
 
-  .populaires-cards .card-title {
-    font-size: 14px;
-  }
+    .card__image--activities {
+      height: 12.5rem;
+    }
 
-  .populaires-cards .card-subtitle {
-    font-size: 13px;
-  }
 }
 
 
 /* $Mobile < 768px
    ==================================== */
 
-@media screen and (width < 768px) {
+@media (width < 768px) {
 
+
+.grid {
+  grid-template-columns: 1.25rem minmax(320px, 1440px) 1.25rem;
+}
+
+
+  .section-header,
+  .section-activities,
+  .section-footer {
+    grid-column: 1 / -1;
+  }
+
+
+  .section-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  /* Navigation */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+  }
+
+    .navbar__item {
+      flex: 1;
+    }
+
+    .navbar__item:last-child {
+      margin-left: 0;
+    }
+
+    .navbar__item:link,
+    .navbar__item:visited {
+      border-top: none;
+      padding-top: 0;
+      border-bottom: 2px solid var(--b-content);
+      padding-bottom: 0.9375rem;
+    }
+
+    .navbar__item:hover,
+    .navbar__item:active,
+    .navbar__item--active:link,
+     .navbar__item--active:visited {
+      border-bottom: 2px solid var(--c-brand);
+    }
+
+  /* Section search */
+  .form__label {
+    display: none;
+  }
+  .form__button {
+    border-radius: 0.9375rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    right: 1rem;
+  }
+  .form__button--mobile {
+    display: block !important;
+  }
+
+  .filters__button {
+    flex: 1 30%;
+  }  
+
+  /* Section accomodations */
+  .accomodation__results {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--b-main);
+    order: 2;
+  }
+
+  /* Section activities */
+  .panel-activities {
+    flex-direction: column;
+  }
+
+    .card__image--activities {
+      height: 8.8125rem;
+    }
+
+  /* Section footer */
+  .section-footer {
+    grid-template-columns: 1fr;
+    gap: 3.125rem;
+    padding: 1.875rem;
+  }
+    .footer__content {
+      padding: 0;
+    }
+
+
+}
 
 /* .navbar__item: border-top: 2px solid var(--b-content); */
 
 
-}
 

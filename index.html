@@ -13,9 +13,9 @@
 	<script src="https://kit.fontawesome.com/0fe29b4175.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="screen">
+<body class="grid">
 
-	<header class="section-header flex--between">
+	<header class="grid-main section-header flex--between">
 		<a href="#" class="header__logo">
 			<svg xmlns="http://www.w3.org/2000/svg" width="62" height="19" viewBox="0 0 62 19" fill="none">
 				<path d="M5.52161 0C6.57874 0.0188771 7.50373 0.264282 8.29657 0.736214C9.08942 1.20815 9.69349 1.84054 10.1088 2.63338C10.543 3.42623 10.7601 4.3229 10.7601 5.3234C10.7601 6.05961 10.6185 6.75807 10.3353 7.41878C10.071 8.06061 9.70293 8.63636 9.231 9.14605C9.91058 9.65574 10.4391 10.2881 10.8167 11.0432C11.2131 11.7983 11.4113 12.6289 11.4113 13.535C11.4113 14.4978 11.1754 15.385 10.7034 16.1967C10.2315 17.0084 9.59911 17.6597 8.80626 18.1505C8.01341 18.6225 7.13562 18.8584 6.17288 18.8584H0V0H5.52161ZM2.4918 2.54843V8.15499H5.52161C6.29558 8.15499 6.94684 7.88127 7.47541 7.33383C8.00397 6.78639 8.26826 6.11624 8.26826 5.3234C8.26826 4.53055 8.00397 3.86985 7.47541 3.34128C6.96572 2.81272 6.31446 2.54843 5.52161 2.54843H2.4918ZM2.4918 10.7034V16.31H6.17288C6.94684 16.31 7.59811 16.0457 8.12668 15.5171C8.65524 14.9697 8.91952 14.309 8.91952 13.535C8.91952 12.7422 8.65524 12.072 8.12668 11.5246C7.59811 10.9771 6.94684 10.7034 6.17288 10.7034H2.4918Z" fill="#0065FC"/>
@@ -33,7 +33,7 @@
 		</nav>
 	</header>
 
-	<main>
+	<main class="grid-main">
 
 		<hgroup class="section-cover">
 			<h1 class="heading-xb">Trouvez votre hébergement pour des vacances de rêve</h1>
@@ -42,18 +42,20 @@
 
 		<section class="section-search">
 
-			<form action="#" method="get" class="search__form--flex">
+			<form action="#" method="get" class="search__form flex">
 				<i class="fa-solid fa-location-dot form__icon"></i>
-				<input type="search" name="location" placeholder="Marseille, France" class="form__label heading-b" />
+				<input type="search" name="location" placeholder="Marseille, France" class="form__placeholder heading-b" />
 				<button type="button" class="form__button heading-b">
 					<i class="fa-solid fa-magnifying-glass form__button--mobile"></i>
-					<span>Rechercher</span>
+					<span class="form__label">Rechercher</span>
 				</button>
 			</form>
 
 			<div class="search__filters flex--a-center">
+
 				<p class="heading-b">Filtres</p>
-				<div class="panel-filters flex--a-center">
+
+				<div class="panel-filters">
 					<button class="filters__button fw-700">
 						<i class="fa-solid fa-money-bill-wave"></i>
 						Economique
@@ -71,11 +73,12 @@
 						Nos pépites
 					</button>
 				</div>
+
 			</div>
 
-			<div class="search__info flex--a-center">
+			<div class="search__info">
 				<i class="fa-solid fa-info"></i>
-				Plus de 500 logements sont disponibles dans cette ville
+				<p>Plus de 500 logements sont disponibles dans cette ville</p>
 			</div>
 
 		</section>
@@ -218,7 +221,7 @@
 				</div>
 
 
-				<div class="panel panel--column">
+				<div class="panel--popular panel panel--column">
 
 					<article class="panel__item">
 						<a href="#" class="card">
@@ -286,9 +289,9 @@
 		<section class="section-activities" id="activites">
 			<h2 class="heading-xb">Activités à Marseille</h2>
 
-			<div class="panel">
+			<div class="panel panel-activities">
 
-				<article class="panel__item--auto">
+				<article class="panel__item--activities">
 					<a href="#" class="card card--column">
 						<div class="card__container-image--bd-top">
 							<img src="images/activites/reno-laithienne.jpg" alt="" class="card__image--activities">						
@@ -297,7 +300,7 @@
 					</a>
 				</article>
 
-				<article class="panel__item--auto">
+				<article class="panel__item--activities">
 					<a href="#" class="card card--column">
 						<div class="card__container-image--bd-top">
 							<img src="images/activites/paul-hermann.jpg" alt="" class="card__image--activities">								
@@ -306,7 +309,7 @@
 					</a>
 				</article>
 
-				<article class="panel__item--auto">
+				<article class="panel__item--activities">
 					<a href="#" class="card card--column">
 						<div class="card__container-image--bd-top">
 							<img src="images/activites/kilyan-sockalingum.jpg" alt="" class="card__image--activities">								
@@ -315,7 +318,7 @@
 					</a>
 				</article>
 
-				<article class="panel__item--auto">
+				<article class="panel__item--activities">
 					<a href="#" class="card card--column">
 						<div class="card__container-image--bd-top">
 							<img src="images/activites/florian-wehde.jpg" alt="" class="card__image--activities">								
@@ -333,7 +336,7 @@
 		</main>
 
 
-		<footer class="section-footer">
+		<footer class="grid-main section-footer">
 
 			<div class="footer__content">
 				<h3 class="heading-b">À propos</h3>
