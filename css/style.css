@@ -569,7 +569,8 @@ body {
 @media (width > 768px) {
 
   .section-activities {
-    margin: var(--gap--b);
+    margin: var(--gap--b) auto;
+    padding-top: var(--gap--b);
     padding-bottom: var(--gap--b);  
   }  
 
