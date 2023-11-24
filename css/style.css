@@ -301,9 +301,7 @@ body {
 }
 
 .navbar__item:hover,
-.navbar__item:active,
-.navbar__item--active:link,
- .navbar__item--active:visited {
+.navbar__item:active {
   color: var(--c-brand);
   border-top: 2px solid var(--c-brand);
 }
@@ -324,7 +322,10 @@ body {
 .panel__item:focus .heading-p,
 .panel__item--auto:hover .heading-p,
 .panel__item--auto:active .heading-p,
-.panel__item--auto:focus .heading-p {
+.panel__item--auto:focus .heading-p,
+.panel__item--activities:hover .heading-p,
+.panel__item--activities:active .heading-p,
+.panel__item--activities:focus .heading-p {
   color: var(--c-brand);
 }
 
@@ -389,8 +390,7 @@ body {
 
   .filters__button:hover,
   .filters__button:focus,
-  .filters__button:active,
-  .filters__button--active{
+  .filters__button:active {
     background-color:var(--c-brand--light);
   }
 
