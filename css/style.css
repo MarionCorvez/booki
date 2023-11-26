@@ -84,6 +84,7 @@ textarea,
 ::placeholder {
   font: inherit;
   color: currentColor;
+  opacity: 1;
 }
 
 a,
@@ -196,8 +197,7 @@ body {
 
 .section-search > *,
 .section-accomodation,
-.section-activities,
-.section-footer {
+.section-activities {
   margin-top: var(--gap--xb);
 }
 
@@ -274,7 +274,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: var(--gap--b);
-  margin: 0 var(--gap--xxb);
+  margin: var(--gap--xb) var(--gap--xxb) 0 var(--gap--xxb);
   padding: 0;
 }
 
@@ -523,6 +523,11 @@ body {
   .search__filters {
     align-items: start;
   }
+
+  .accomodation__results,
+  .accomodation__popular {
+    width: 100%;
+  }
   
 }  
 
@@ -550,7 +555,7 @@ body {
       }
 
   .section-footer {
-    gap: var(--gap-s);
+    gap: var(--gap--s);
   }
 
 }
@@ -582,9 +587,7 @@ body {
     padding: 0;
   }
 
-  .panel-filters,
-  .accomodation__results,
-  .accomodation__popular {
+  .panel-filters {
     width: 100%;
   }
 
