@@ -38,8 +38,8 @@
   --l-height:       1.4;
 
 /* Layout */
-  --l--small:       320px;                    /* minimun width */
-  --l--large:       calc(1440px + 6.25rem);     /* max width for large screen */
+  --l--small:       calc(320px - 2.5rem);     /* minimun width */
+  --l--large:       calc(1440px + 6.25rem);   /* max width for large screen */
 
 /* Gutters */
   --gap--xs:        0.625rem;   /* filters */
@@ -583,17 +583,16 @@ body {
     padding: 0 var(--gap);
   }
 
-  .layout--full {
-    padding: 0;
-  }
-
-  .panel-filters {
-    width: 100%;
-  }
-
-
+  .layout--full,
   .footer__content {
     padding: 0;
+  }
+
+  .panel-filters,
+  .navbar,
+  .search__form,
+  .form__placeholder {
+    width: 100%;
   }
 
     .section-header,
@@ -607,11 +606,6 @@ body {
       text-align: center;
     }
 
-    .navbar,
-    .search__form,
-    .form__placeholder {
-      width: 100%;
-    }
 
     /* Navigation */
     .navbar__item {
@@ -666,7 +660,6 @@ body {
     }  
 
     /* Section accomodations */
-    .section-accomodation,
     .panel,
     .panel--popular {
       margin-top: var(--gap--s);
@@ -706,6 +699,7 @@ body {
       grid-template-columns: 1fr;
       gap: var(--gap--xxb);
       padding: var(--gap--b);
+      margin: 0;
     }
 
 }
