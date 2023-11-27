@@ -38,16 +38,16 @@
   --l-height:       1.4;
 
 /* Layout */
-  --l--small:       calc(320px - 2.5rem);     /* minimun width */
-  --l--large:       calc(1440px + 6.25rem);   /* max width for large screen */
+  --l--small:       calc(320px - 40px);     /* minimun width */
+  --l--large:       calc(1440px + 100px);   /* max width for large screen */
 
 /* Gutters */
-  --gap--xs:        0.625rem;   /* filters */
-  --gap--s:         0.9375rem;  /* footer item - gap mobile */
-  --gap:            1.25rem;    /* footer */
-  --gap--b:         1.875rem;   /* gap desktop */
-  --gap--xb:        2.1875rem;  /* between sections */
-  --gap--xxb:       3.125rem;   /* layout margin */
+  --gap--xs:        10px;   /* filters */
+  --gap--s:         15px;   /* footer item - gap mobile */
+  --gap:            20px;   /* footer */
+  --gap--b:         30px;   /* gap desktop */
+  --gap--xb:        35px;   /* between sections */
+  --gap--xxb:       50px;   /* layout margin */
 
 }
 
@@ -83,8 +83,9 @@ select,
 textarea,
 ::placeholder {
   font: inherit;
+  font-size: var(--f-size-p);
   color: currentColor;
-  opacity: 1;
+  opacity: 1; /* Fix Firefox default style */
 }
 
 a,
@@ -96,13 +97,6 @@ button {
 a:link,
 a:visited {
   color: var(--c-main);
-}
-
-input[type="text"],
-input[type="number"],
-select,
-textarea {
-  font-size: var(--f-size-p);
 }
 
 ol, ul, menu {
@@ -148,7 +142,7 @@ body {
   font-weight: 700;
 }
 
-/* filters - Champ recherche / afficher plus */
+/* filters - search */
 .heading-b  {
   font-size: var(--f-size-b);
   font-weight: 700;
@@ -186,14 +180,8 @@ body {
   }
 
 
-
-
 /* $Gutters
    ==================================== */
-
-/* Voir quelles gutters peuvent devenir des flex gaps
-   Voir évolution en mobile si factorisation possible
- */
 
 .section-search > *,
 .section-accomodation,
@@ -241,7 +229,7 @@ body {
    ==================================== */
 
 .section-accomodation {
-  gap: 2.5rem;
+  gap: 40px;
 }
 
   .accomodation__results,
@@ -252,7 +240,7 @@ body {
 
   .accomodation__results,
   .accomodation__popular {
-    border-radius: 0.9375rem;
+    border-radius: var(--gap--s);
     padding: var(--gap--b);
   }
 
@@ -263,8 +251,6 @@ body {
   .accomodation__popular {
     width: 31%;
   }  
-
-
 
 
 /* $Footer
@@ -287,12 +273,12 @@ body {
     }
 
 
+
 /*
   ========================================
   $Components
   ========================================
 */
-
 
 /* $Navigation
    ==================================== */
@@ -301,7 +287,7 @@ body {
 .navbar__item:visited {
   color: var(--c-main);
   border-top: 2px solid transparent;
-  padding-top: 0.875rem;
+  padding-top: 14px;
   display: inline-block;
 }
 
@@ -312,7 +298,7 @@ body {
 }
 
 .navbar__item:last-child {
-  margin-left: 4.25rem;
+  margin-left: 68px;
 }
 
 
@@ -339,7 +325,7 @@ body {
    ==================================== */
 
   .section-cover p {
-    padding-top: 0.5rem;
+    padding-top: 8px;
   }
 
 
@@ -358,13 +344,13 @@ body {
 
 .form__placeholder {
   border: 1px solid var(--b-content);
-  padding: 0 clamp(0.5rem, 1vmax, 1.5rem);
+  padding: 0 clamp(8px, 1vmax, 24px);
 }
 
 .form__button {
   color: var(--b-main);
   background-color: var(--c-brand);
-  padding: var(--gap--s) 1rem;
+  padding: var(--gap--s) 16px;
   border-radius: 0 var(--gap--s) var(--gap--s) 0;
 }
 
@@ -383,14 +369,14 @@ body {
 }
 
 .panel-filters {
-  gap: var(--gap) clamp(var(--gap--xs), 1.3vmax, 1rem);
+  gap: var(--gap) clamp(var(--gap--xs), 1.3vmax, 16px);
 } 
 
   .filters__button {
     font-weight: 700; 
-    padding: 0.875rem 1.125rem;
+    padding: 14px 18px;
     border: 2px solid var(--c-filters);
-    border-radius: 1.5625rem;
+    border-radius: 25px;
   }
 
   .filters__button:hover,
@@ -400,7 +386,7 @@ body {
   }
 
     .filters__button i {
-      padding-right: 0.25rem;
+      padding-right: 4px;
     }
 
     .filters__button i,
@@ -418,7 +404,7 @@ body {
       font-size: 0.75rem;
       border: 1px solid var(--c-filters);
       border-radius: 50%;
-      padding: 0.25rem 0.5rem;
+      padding: 4px 8px;
     }
 
 
@@ -437,70 +423,72 @@ body {
     height: 100%;   
   }
 
-  .panel__item--activities {
-    flex: 1 20%;
-  }
-
-  .card {
-    display: flex;
-    background-color: var(--b-main);
-    border-radius: var(--gap);
-    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
-  }
-
-    .card__details {
-      padding: 0.5rem var(--gap--xs) var(--gap--xs) var(--gap--xs);
-    }
-
-    .card__details--popular {
-      width: 60%;
-      padding: var(--gap--xs) 0.3125rem 0.3125rem var(--gap--xs);
-    }    
-
-    .card__details--activities {
+    .card {
       display: flex;
-      align-items: center;
-      padding: var(--gap) var(--gap--b);
-      height: 2.5rem;
+      background-color: var(--b-main);
+      border-radius: var(--gap);
+      box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
     }
 
-      .card__subhead {
-        padding: 0.5rem 0;
-      }
-        
-      .card__icons--popular {
-        margin-top: auto;
+      .card__details {
+        padding: 8px var(--gap--xs) var(--gap--xs) var(--gap--xs);
       }
 
-  .card__container-image--accomodation {
-    border: 5px solid var(--b-main);
-    border-radius: var(--gap) var(--gap) 0 0;
- }
+        .card__subhead {
+          padding: 8px 0;
+        }
 
-    .card__image--accomodation {
-      border-radius: var(--gap) var(--gap) 0 0;
-      height: 7.75rem;
+    /* Accomodation results */
+      .card__container-image--accomodation {
+        border: 5px solid var(--b-main);
+        border-radius: var(--gap) var(--gap) 0 0;
+     }
+
+        .card__image--accomodation {
+          border-radius: var(--gap) var(--gap) 0 0;
+          height: 7.75rem;
+        }
+
+    /* Popular */
+      .card__container-image--popular {
+        border: 5px solid var(--b-main);
+        border-radius: var(--gap) 0 0 var(--gap);
+        width: 40%;
+      }
+
+        .card__image--popular {
+          border-radius: var(--gap) 0 0 var(--gap);
+          height: 9.125rem;
+        }
+
+      .card__details--popular {
+        width: 60%;
+        padding: var(--gap--xs) 5px 5px var(--gap--xs);
+      }  
+
+        .card__icons--popular {
+          margin-top: auto;
+        }
+
+    /* Activities */
+    .panel__item--activities {
+      flex: 1 20%;
     }
+      .card__details--activities {
+        display: flex;
+        align-items: center;
+        padding: var(--gap) var(--gap--b);
+        height: 2.5rem;
+      }
 
-  .card__container-image--popular {
-    border: 5px solid var(--b-main);
-    border-radius: var(--gap) 0 0 var(--gap);
-    width: 40%;
-  }
+      .card__container-image--activities {
+        border-radius: var(--gap) var(--gap) 0 0;
+      }
 
-    .card__image--popular {
-      border-radius: var(--gap) 0 0 var(--gap);
-      height: 9.125rem;
-    }
-
-  .card__container-image--activities {
-    border-radius: var(--gap) var(--gap) 0 0;
-  }
-
-    .card__image--activities {
-      border-radius: var(--gap) var(--gap) 0 0;
-      height: 23.75rem;
-    }
+        .card__image--activities {
+          border-radius: var(--gap) var(--gap) 0 0;
+          height: 23.75rem;
+        }
 
 
 
@@ -510,7 +498,7 @@ body {
   ========================================
 */
 
-/* $Global < 1024px
+/* $Global less than 1024px
    ==================================== */
 
 @media (width < 1024px) {
@@ -532,7 +520,7 @@ body {
 }  
 
 
-/* $Tablet > 768px and < 1024px
+/* $Tablet between 768px and 1024px
    ==================================== */
 
 @media (768px <= width < 1024px) {
@@ -561,7 +549,7 @@ body {
 }
 
 
-/* $Screen > 768px
+/* $Screen more than 768px
    ==================================== */
 
 @media (width > 768px) {
@@ -574,7 +562,7 @@ body {
 }
 
 
-/* $Mobile < 768px
+/* $Mobile less than 768px
    ==================================== */
 
 @media (width < 768px) {
@@ -605,7 +593,6 @@ body {
     .navbar {
       text-align: center;
     }
-
 
     /* Navigation */
     .navbar__item {
@@ -640,7 +627,7 @@ body {
       border-radius: var(--gap--s);
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       position: relative;
-      right: 0.7rem;
+      right: 10px;
     }
 
     .form__button--mobile {
@@ -699,7 +686,7 @@ body {
       grid-template-columns: 1fr;
       gap: var(--gap--xxb);
       padding: var(--gap--b);
-      margin: 0;
+      margin: var(--gap--xb) 0 0 0;
     }
 
 }
