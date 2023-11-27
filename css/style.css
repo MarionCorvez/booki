@@ -229,6 +229,7 @@ body {
    ==================================== */
 
 .section-accomodation {
+  flex-wrap: nowrap;
   gap: 40px;
 }
 
@@ -431,7 +432,7 @@ body {
     }
 
       .card__details {
-        padding: 8px var(--gap--xs) var(--gap--xs) var(--gap--xs);
+        padding: 8px;
       }
 
         .card__subhead {
@@ -477,7 +478,7 @@ body {
       .card__details--activities {
         display: flex;
         align-items: center;
-        padding: var(--gap) var(--gap--b);
+        padding: var(--gap);
         height: 2.5rem;
       }
 
