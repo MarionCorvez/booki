@@ -12,7 +12,7 @@
 8. [X] Intégrer le conteneur "Activités à Marseille"
 9. [X] Implémenter le footer
 10. [X] Mettre en place le responsive design
-11. [ ] Vérifier la qualité du code
+11. [X] Vérifier la qualité du code
 
 
 ## Spécifications fonctionnelles
