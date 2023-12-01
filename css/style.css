@@ -37,10 +37,6 @@
   --f-size-xb:      clamp(1.25rem, 0.227vw + 1.193rem, 1.375rem); /* h1 - h2 */
   --l-height:       1.4;
 
-/* Layout */
-  --l--small:       calc(320px - 40px);     /* minimun width */
-  --l--large:       calc(1440px + 100px);   /* max width for large screen */
-
 /* Gutters */
   --gap--xs:        10px;   /* filters */
   --gap--s:         15px;   /* footer item - gap mobile */
@@ -171,7 +167,7 @@ body {
    ==================================== */
 
 .screen {
-  width: clamp(var(--l--small), 100%, var(--l--large));
+  max-width: 1440px;
   margin: 0 auto;
 }
 
