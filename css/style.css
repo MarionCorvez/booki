@@ -499,10 +499,10 @@ body {
   ========================================
 */
 
-/* $Global less than 1024px
+/* $Global less or equal to 1024px
    ==================================== */
 
-@media (width < 1024px) {
+@media (width <= 1024px) {
 
   .search__filters,
   .section-accomodation {
@@ -524,7 +524,7 @@ body {
 /* $Tablet between 768px and 1024px
    ==================================== */
 
-@media (768px <= width < 1024px) {
+@media (768px <= width <= 1024px) {
 
   .panel--popular {
     flex-direction: row;
